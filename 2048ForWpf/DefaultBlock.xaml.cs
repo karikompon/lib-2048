@@ -47,7 +47,7 @@ public partial class DefaultBlock : BlockBase, INotifyPropertyChanged
         }
     }
 
-    public int ColorCode
+    public override int ColorCode
     {
         get { return _colorCode; }
         set

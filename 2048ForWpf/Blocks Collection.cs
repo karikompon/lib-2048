@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace _2048ForWpf;
@@ -10,6 +11,8 @@ public interface IBlocksCollection : IEnumerable<BlockBase>
     void Remove(BlockBase block);
 
     int Count();
+
+    void Clear();
 }
 
 public class BlocksCollection : IBlocksCollection
@@ -34,6 +37,11 @@ public class BlocksCollection : IBlocksCollection
     public int Count()
     {
         return _blocks.Count;
+    }
+
+    public void Clear()
+    {
+        _blocks.Clear();
     }
 
     public IEnumerator<BlockBase> GetEnumerator()

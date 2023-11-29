@@ -7,6 +7,8 @@ public abstract class BlockBase : UserControl
 {
     public abstract Brush? Color { get; set; }
 
+    public abstract int ColorCode { get; set; }
+
     public int Row { get; set; }
 
     public int Column { get; set; }

@@ -14,8 +14,9 @@ public partial class GameWindow : Window
     private readonly IBlocksCollection _blocks;
     private readonly IGameOutcomesHandler _gameOutcomesHandler;
     private readonly ICustomizer _customizer;
+    private readonly IUndoHandler _undoHandler;
 
-    public GameWindow(IGridSettings gridSettings, IBlockPositionWriter blockPositionWriter, IGridGenerator gridGenerator, IBlocksCollection blocks, IGameOutcomesHandler gameOutcomesHandler, ICustomizer customizer)
+    public GameWindow(IGridSettings gridSettings, IBlockPositionWriter blockPositionWriter, IGridGenerator gridGenerator, IBlocksCollection blocks, IGameOutcomesHandler gameOutcomesHandler, ICustomizer customizer, IUndoHandler undoHandler)
     {
         InitializeComponent();
 
@@ -25,6 +26,7 @@ public partial class GameWindow : Window
         _blocks = blocks;
         _gameOutcomesHandler = gameOutcomesHandler;
         _customizer = customizer;
+        _undoHandler = undoHandler;
 
         _grid = _gridGenerator.GenerateGrid();
         _containerGrid.Children.Add(_grid);
@@ -132,16 +134,23 @@ public partial class GameWindow : Window
         switch (e.Key)
         {
             case Key.Up:
+                _undoHandler.GetReadyForUndo();
                 SwipeBlocks_Up();
                 break;
             case Key.Down:
+                _undoHandler.GetReadyForUndo();
                 SwipeBlocks_Down();
                 break;
             case Key.Left:
+                _undoHandler.GetReadyForUndo();
                 SwipeBlocks_Left();
                 break;
             case Key.Right:
+                _undoHandler.GetReadyForUndo();
                 SwipeBlocks_Right();
+                break;
+            case Key.Back:
+                _undoHandler.Undo(_grid);
                 break;
         }
     }
