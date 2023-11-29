@@ -11,12 +11,12 @@ public partial class GameWindow : Window
     private readonly IGridSettings _gridSettings;
     private readonly IBlockPositionWriter _blockPositionWriter;
     private readonly IGridGenerator _gridGenerator;
-    private readonly IBlocksCollection _blocks;
+    private readonly IBlockCollection _blocks;
     private readonly IGameOutcomesHandler _gameOutcomesHandler;
     private readonly ICustomizer _customizer;
     private readonly IUndoHandler _undoHandler;
 
-    public GameWindow(IGridSettings gridSettings, IBlockPositionWriter blockPositionWriter, IGridGenerator gridGenerator, IBlocksCollection blocks, IGameOutcomesHandler gameOutcomesHandler, ICustomizer customizer, IUndoHandler undoHandler)
+    public GameWindow(IGridSettings gridSettings, IBlockPositionWriter blockPositionWriter, IGridGenerator gridGenerator, IBlockCollection blocks, IGameOutcomesHandler gameOutcomesHandler, ICustomizer customizer, IUndoHandler undoHandler)
     {
         InitializeComponent();
 

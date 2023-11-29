@@ -19,11 +19,11 @@ public interface IBlockPositionWriter : IBlockPositionReader
 public class BlockPositionWriter : IBlockPositionWriter
 {
     private readonly Random _random;
-    private readonly IBlocksCollection _blocks;
+    private readonly IBlockCollection _blocks;
     private readonly IGridSettings _gridSettings;
     private readonly IGameOutcomesHandler _gameOutcomesHandler;
 
-    public BlockPositionWriter(IBlocksCollection blocks, IGridSettings gridSettings, IGameOutcomesHandler gameOutcomesHandler)
+    public BlockPositionWriter(IBlockCollection blocks, IGridSettings gridSettings, IGameOutcomesHandler gameOutcomesHandler)
     {
         _random = new Random();
         _blocks = blocks;

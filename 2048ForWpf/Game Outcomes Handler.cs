@@ -12,12 +12,12 @@ public interface IGameOutcomesHandler
 
 public class GameOutcomesHandler : IGameOutcomesHandler
 {
-    private readonly IBlocksCollection _blocks;
+    private readonly IBlockCollection _blocks;
     private readonly IGridSettings _gridSettings;
 
     private bool _gameIsWon;
 
-    public GameOutcomesHandler(IBlocksCollection blocks, IGridSettings gridSettings)
+    public GameOutcomesHandler(IBlockCollection blocks, IGridSettings gridSettings)
     {
         _blocks = blocks;
         _gameIsWon = false;
