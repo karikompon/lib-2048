@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace _2048ForWpf;
 
-public interface IBlockCollection : IEnumerable<BlockBase>
+public interface IBlockRepository : IEnumerable<BlockBase>
 {
     void Add(BlockBase block);
 
@@ -15,11 +15,11 @@ public interface IBlockCollection : IEnumerable<BlockBase>
     void Clear();
 }
 
-public class BlockCollection : IBlockCollection
+public class BlockRepository : IBlockRepository
 {
     private readonly List<BlockBase> _blocks;
 
-    public BlockCollection()
+    public BlockRepository()
     {
         _blocks = new List<BlockBase>();
     }

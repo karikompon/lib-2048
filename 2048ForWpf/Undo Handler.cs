@@ -18,14 +18,14 @@ public interface IUndoHandler
 
 public class UndoHandler : IUndoHandler
 {
-    private readonly IBlockCollection _blocks;
+    private readonly IBlockRepository _blocks;
     private readonly IBlockPositionWriter _blockPositionWriter;
     private readonly ICustomizer _customizer;
 
     private List<(int Row, int Column, int? Number, int ColorCode, Brush? Color)> _savedInfo;
     private bool UndoWasDone;
 
-    public UndoHandler(IBlockCollection blocks, IBlockPositionWriter blockPositionWriter, ICustomizer customizer)
+    public UndoHandler(IBlockRepository blocks, IBlockPositionWriter blockPositionWriter, ICustomizer customizer)
     {
         _blocks = blocks;
         _blockPositionWriter = blockPositionWriter;
