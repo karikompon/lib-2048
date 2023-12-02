@@ -10,7 +10,7 @@ public interface IGameOutcomesHandler
     bool TryLose();
 }
 
-public class GameOutcomesHandler : IGameOutcomesHandler
+internal class GameOutcomesHandler : IGameOutcomesHandler
 {
     private readonly IBlockRepository _blocks;
     private readonly IGridSettings _gridSettings;

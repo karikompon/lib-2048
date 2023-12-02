@@ -7,7 +7,7 @@ public interface IGridSettings
     public int HorizontalBlockCount { get; set; }
 }
 
-public class GridSettings : IGridSettings
+internal class GridSettings : IGridSettings
 {
     public int BlockSize { get; set; } = 50;
     public int VerticalBlockCount { get; set; } = 5;

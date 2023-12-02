@@ -16,7 +16,7 @@ public interface IBlockPositionWriter : IBlockPositionReader
     void SetRandomBlockPosition(BlockBase block);
 }
 
-public class BlockPositionWriter : IBlockPositionWriter
+internal class BlockPositionWriter : IBlockPositionWriter
 {
     private readonly Random _random;
     private readonly IBlockRepository _blocks;

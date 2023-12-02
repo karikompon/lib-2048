@@ -16,7 +16,7 @@ public interface IUndoHandler
     void Undo(Grid grid);
 }
 
-public class UndoHandler : IUndoHandler
+internal class UndoHandler : IUndoHandler
 {
     private readonly IBlockRepository _blocks;
     private readonly IBlockPositionWriter _blockPositionWriter;

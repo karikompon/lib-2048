@@ -15,7 +15,7 @@ public interface ICustomizer
     public Brush BlockNumberColor { get; set; }
 }
 
-public class Customizer : ICustomizer
+internal class Customizer : ICustomizer
 {
     public Brush BackgroundColor { get; set; } = Brushes.Black;
     public Brush[] BlockColors { get; set; } =

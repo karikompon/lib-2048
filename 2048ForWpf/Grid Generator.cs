@@ -8,7 +8,7 @@ public interface IGridGenerator
     Grid GenerateGrid();
 }
 
-public class GridGenerator : IGridGenerator
+internal class GridGenerator : IGridGenerator
 {
     private readonly IGridSettings _gridSettings;
     private readonly IBlockPositionWriter _blockPositionWriter;
